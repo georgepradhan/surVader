@@ -1,0 +1,7 @@
+<h4><%= @user.username.capitalize %></h4>
+
+<a href="/comments/<%= @user.id %>">Comments</a>
+<a href="/posts/<%= @user.id %>">Posts</a> 
+
+<h3>User since: <%= @user.created_at %></h3>
+

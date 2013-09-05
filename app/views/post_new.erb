@@ -1,0 +1,22 @@
+<form action="/posts" method="POST">
+
+  <input type="hidden" name="post[user_id]" value="<%=current_user.id%>"> 
+
+  <label>Title:
+    <input type="text" name="post[title]">
+  </label>
+  <br>  
+  <br>  
+  <label>URL:
+    <input type="text" name="post[url]">
+  </label>
+  <br>  
+  <br>  
+  <label>Text:
+    <input type="text" name="post[text]">
+  </label>
+  <br>  
+  <br>  
+    <input type="submit">
+
+</form>
