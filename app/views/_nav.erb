@@ -1,8 +1,6 @@
 <nav>
   <ul>
     <li><a href="/">Home</a></li>
-    <li><a href="/comments">Comments</a></li>
-    <li><a href="/post/new">Submit</a></li>
     
     <% if logged_in? %>
       <li><a href="/user/<%= current_user.id %>">Profile</a></li>    

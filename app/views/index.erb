@@ -1,13 +1,4 @@
-<h1>Welcome to Thomas and George's "Hacker News"!</h1>
-
-<% if @posts %>
-  <ul>  
-  <% @posts.each do |post| %>
-    <li><a href="/post/<%=post.id%>"><%= post.title %></a> Comments: <%= post.comments.count %></li>
-    
-  <% end %>
-  </ul>
-<% end %>
+<h1>Welcome to Our Page!</h1>
 
 <!-- 
 An index page listing all the posts
