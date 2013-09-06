@@ -1,0 +1,20 @@
+<h1>Results for <%= @survey.label %></h1>
+<ul>
+<% @questions.each_with_index do |question, index| %>
+  <li><%=question.label%></li>
+    <% @choices[index].each do |choice| %>
+      
+      <table>
+        <tr>
+          <th>Choice</th>
+          <th>Number of Votes</th>
+        </tr>
+        <tr>
+          <td><%=choice.label%></td>
+          <td><%=choice.responses.count%></td>
+        </tr>
+      </table>
+
+    <% end %>
+<% end %>
+</ul>
