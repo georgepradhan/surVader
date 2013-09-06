@@ -4,6 +4,8 @@ get '/surveys' do
 end
 
 get '/survey/:survey_id' do
-  survey_id = params[:survey_id]
+  @survey = Survey.find(params[:survey_id])
+
+  erb :_survey_show
 end
 
