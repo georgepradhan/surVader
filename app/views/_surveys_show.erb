@@ -1,0 +1,15 @@
+<% if @surveys %>
+  <table>
+    <tr>
+      <th>Survey Name</th>
+      <th>Survey Description</th>
+    </tr>
+    <% @surveys.each do |survey| %>
+      <tr>
+        <td><a href="survey/<%=survey.id%>"><%=survey.label%></a></td>
+        <td><%=survey.description%></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+
