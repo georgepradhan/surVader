@@ -1,0 +1,26 @@
+<% if @survey %>
+  <h1><%=@survey.label%></h1>
+  <h3><%=@survey.description%></h3>
+
+  <ol>
+    <form action="/survey/<%=@survey.id%>/responses" method="POST">
+      <% @survey.questions.each do |question| %>
+        <div class='question'>
+          <li>
+            <%= question.label %>
+          </li>
+          <ul>
+            <% question.choices.each do |choice| %>
+              <li>
+                <label><%= choice.label %>
+                  <input type="radio" name="question[<%=question.label%>]" value="<%=choice.id%>">
+                </label>
+              </li>
+            <% end %>
+          </ul> 
+        </div>
+      <% end %>
+    <input type="submit" value="Figure out this route.">
+    </form>
+  </ol>
+<% end %>
