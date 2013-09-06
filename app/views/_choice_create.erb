@@ -1,0 +1,8 @@
+<form action='/choices/new' method='post' id="new_choice">
+  <input type='text' name='label' placeholder='Give me an option for your question.'>
+  <input type='hidden' name='survey_id' value='<%= @survey.id %>'>
+  <input type='hidden' name='question_id' value='<%= @question.id %>'>
+  <input type='submit' value="Add Choices">
+</form>
+
+<a class="finish_survey" href="/user/<%= current_user.id %>">All done! Take me home.</a>

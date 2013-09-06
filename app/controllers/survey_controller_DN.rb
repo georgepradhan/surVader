@@ -10,12 +10,27 @@ get '/surveys/new' do
 end
 
 post '/surveys/new' do
-  @new_survey = Survey.new(label: params[:label], description: params[:description], user: current_user)
-  if @new_survey.save
-    @confirmation = "You made the survey #{@new_survey.label}!"    
-    redirect to("/user/#{current_user.id}")
+  @survey = Survey.new(label: params[:label], description: params[:description], user: current_user)
+  if @survey.save
+    @confirmation = "You made the survey #{@survey.label}!"
+    # redirect to("/users/#{current_user.id}")
+    erb :_question_create, layout: false
   else
-    @errors = @new_survey.errors.full_messages
+    @errors = @survey.errors.full_messages
     erb :survey_create
   end
 end
+
+post '/questions/new' do
+  @survey = Survey.find(params[:survey_id])
+  @question = Question.create(label: params[:label], survey: @survey)
+  erb :_choice_create, layout: false
+end
+ 
+post '/choices/new' do
+  @survey = Survey.find(params[:survey_id])
+  @question = Question.find(params[:question_id])
+  @choice = Choice.create(label: params[:label], question: @question)
+  erb :_choice_create, layout: false
+end
+

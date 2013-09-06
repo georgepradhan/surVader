@@ -1,3 +1,5 @@
+<script type='text/javascript' src="/js/survey_creation.js"></script>
+
 <%= erb :_errors %>
 
 <form id="new_survey" method="post" action="/surveys/new">
@@ -5,3 +7,7 @@
   <textarea name="description" rows="4" columns="20" placeholder="What's this survey about?"></textarea>
   <input type="submit" value="Create Survey">
 </form>
+
+<div id="question_form">
+  
+</div>
