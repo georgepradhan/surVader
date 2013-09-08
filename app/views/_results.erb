@@ -1,10 +1,10 @@
 <h1>Results for <%= @survey.label %></h1>
-<ul>
+<ol>
 <% @questions.each_with_index do |question, index| %>
-  <li><%=question.label%></li>
+  <h3><li><%=question.label%></li></h3>
     <% @choices[index].each do |choice| %>
-      
-      <table>
+      <div class="table-responsive">
+      <table class="table table-striped ">
         <tr>
           <th>Choice</th>
           <th>Number of Votes</th>
@@ -14,7 +14,13 @@
           <td><%=choice.responses.count%></td>
         </tr>
       </table>
-
+      </div>
     <% end %>
 <% end %>
-</ul>
+</ol>
+
+<!-- Moris Chart -->
+
+<div id="barGraph" style="height: 250px;"></div>
+
+<script type="text/javascript" src="/js/survey_results.js"></script>
