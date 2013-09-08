@@ -1,7 +1,7 @@
 .container {
   margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
+  width: 750px;
+  padding: 0px 0px 0px 0px;
   border: 1px dotted black;
 }
 th {
@@ -10,4 +10,31 @@ th {
 
 nav li {
   display: inline;
+}
+
+.container div {
+  margin: 20px 0;
+}
+
+.left {
+  position: relative;
+  height: 600px;
+  width: 410px;
+  border-right: 1px solid;
+  float: left;
+}
+
+.top-right {
+  position: relative;
+  width: 300px;
+  height: 350px;
+  float: right;
+}
+
+.bottom-right {
+  position: relative;
+  width: 300px;
+  height: 250px;
+  float: right;
+  border-top: 1px solid;
 }
