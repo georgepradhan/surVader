@@ -1,9 +1,10 @@
 .container {
   margin: 20px auto;
+  height: 750px;
   width: 750px;
   padding: 0px 0px 0px 0px;
-  border: 1px dotted black;
 }
+
 th {
   text-align: left;
 }

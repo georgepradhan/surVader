@@ -24,10 +24,11 @@
 
   <title></title>
 </head>
-  <%= erb :_nav %>
+
 <body>
-<div class="container">
-  <%= yield %>
-</div>
+  <div class="container">
+    <%= erb :_nav %>
+    <%= yield %>
+  </div>
 </body>
 </html>
