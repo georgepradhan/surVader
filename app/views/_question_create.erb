@@ -1,7 +1,6 @@
 <form id="new_question" action='/questions/new' method='post'>
   <input type='text' name='label' placeholder='What would you like to ask?'>
   <input type='hidden' name='survey_id' value='<%= @survey.id %>'>
-  <!-- <input type='submit' value="Add Choices"> -->
   <input id='question_submit' type='submit' value="Create Question">
 </form>
 

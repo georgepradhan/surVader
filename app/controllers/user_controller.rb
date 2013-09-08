@@ -8,7 +8,7 @@ post "/users" do
   signup
 end
 
-get "/user/:user_id" do
+get "/users/:user_id" do
   @user = User.find(params[:user_id])
   @surveys = @user.surveys
   erb :user_profile
