@@ -10,15 +10,15 @@ get '/surveys/new' do
 end
 
 post '/surveys/new' do
-  @survey = Survey.new(label: params[:label], description: params[:description], user: current_user)
-  if @survey.save
-    @confirmation = "You made the survey #{@survey.label}!"
+  # @survey = Survey.new(label: params[:label], description: params[:description], user: current_user)
+  # if @survey.save
+  #   @confirmation = "You made the survey #{@survey.label}!"
     # redirect to("/users/#{current_user.id}")
     erb :_question_create, layout: false
-  else
-    @errors = @survey.errors.full_messages
-    erb :survey_create
-  end
+  # else
+  #   @errors = @survey.errors.full_messages
+  #   erb :survey_create
+  # end
 end
 
 post '/questions/new' do
@@ -34,3 +34,6 @@ post '/choices/new' do
   erb :_choice_create, layout: false
 end
 
+post '/surveys/:survey_id' do
+  @survey = Survey.new(label: params[:label], description: params[:description], user: current_user)
+end
