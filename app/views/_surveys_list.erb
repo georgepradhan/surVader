@@ -6,7 +6,7 @@
     </tr>
     <% @surveys.each do |survey| %>
       <tr>
-        <td><a href="survey/<%=survey.id%>"><%=survey.label%></a></td>
+        <td><a href="/survey/<%=survey.id%>"><%=survey.label%></a></td>
         <td><%=survey.description%></td>
       </tr>
     <% end %>

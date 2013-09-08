@@ -1,6 +1,6 @@
 get '/surveys' do
   @surveys = Survey.all
-  erb :_surveys_show
+  erb :_surveys_list
 end
 
 get '/surveys/:survey_id' do
