@@ -6,7 +6,7 @@ helpers do
       session[:user_id] = @user.id
       redirect "/"
     else
-      erb :auth_errors
+      erb :_errors
     end
   end
 

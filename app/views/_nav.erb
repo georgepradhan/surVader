@@ -2,14 +2,11 @@
   <ul>
     <li><a href="/">Home</a></li>
     
-    <% if logged_in? %>
-      <li><a href="/user/<%= current_user.id %>">My Surveys</a></li>    
-      <li><a href="/surveys">Surveys you can take</a></li>
+    <% if logged_in? %>      
       <li><a href="/logout">Logout</a></li>
     <% else %>
-      <li><a href="/login">Log In</a></li>
+      <li><%=erb :_user_login%></li>
     <% end %>
-
   </ul>
 </nav>
 

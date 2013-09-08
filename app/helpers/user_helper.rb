@@ -9,7 +9,7 @@ helpers do
   end
 
   def signup
-    user = User.new(email: params[:email], password: params[:password])
+    user = User.new(email: params[:email], password: params[:password], name: params[:name])
     if user.save
       session[:user_id] = user.id
       redirect "/"

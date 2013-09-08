@@ -1,4 +1,6 @@
-# stuff for sessions (logging in)
+before do
+  erb :index unless logged_in?
+end
 
 post '/login' do
   login
