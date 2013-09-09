@@ -1,12 +1,21 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
-  <ul class="nav">
-    <li><a class="navbar-form pull-left navbar-brand" href="/">surVader</a></li>
-    
-    <% if logged_in? %>      
-      <li><a class="navbar-form pull-right navbar-brand" href="/logout">Logout</a></li>
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">surVader</a>
+    </div>
+    <% if logged_in? %>
+      <div class="navbar-collapse collapse">
+        <form class="navbar-form navbar-right" action="/logout" method='get'>
+          <button type="submit" class="btn btn-success">Logout</button>
+        </form>
+      </div>
     <% else %>
-      <li><%=erb :_user_login%></li>
+      <%= erb :_user_login %>
     <% end %>
-  </ul>
+  </div>
 </div>
-
