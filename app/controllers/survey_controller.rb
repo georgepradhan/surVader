@@ -20,10 +20,17 @@ get "/surveys/:survey_id/results" do
   erb :_results
 end
 
-get "/surveys/:survey_id/results/json_format" do
+# AJAX controller for survey_results.js
+get "/surveys/:survey_id/results/questions/:question_id" do
   content_type :json
-  
-  # should return json object for ajax call
+  @choices = []
+  @question = Question.find(params[:question_id])
+
+  @question.choices.each do |choice|
+    @choices << {label: "#{choice.label}", value: "#{choice.responses.count}"}
+  end
+
+  @choices.to_json
 end
 
 post '/surveys' do
