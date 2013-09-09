@@ -3,7 +3,7 @@ console.log("LOADED")
 
 new Morris.Bar({
   // ID of the element in which to draw the chart.
-  element: 'barGraph',
+  element: 'barGraph-0',
   // Chart data records -- each entry in this array corresponds to a point on
   // the chart.
   data: [

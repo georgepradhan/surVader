@@ -16,7 +16,14 @@ get "/surveys/:survey_id/results" do
   @survey = Survey.find(params[:survey_id])
   @questions = @survey.questions
   @choices = @questions.map {|question| question.choices}  # array of choice-object arrays... 
+  puts @choices
   erb :_results
+end
+
+get "/surveys/:survey_id/results/json_format" do
+  content_type :json
+  
+  # should return json object for ajax call
 end
 
 post '/surveys' do
