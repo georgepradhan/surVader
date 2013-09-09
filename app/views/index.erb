@@ -1,11 +1,19 @@
-<h1>Welcome to surVader!</h1>
+<link rel="stylesheet" href="/css/home_page.css">
 
-<h2>Create Account</h2>
+<div id="outside">
+  <div id="signup_wrapper">
+    <div id="signup_background">
+    </div>
 
-<form action="/users" method="POST">
-  <input type="text" name="name" placeholder="name">
-  <input type="email" name="email" placeholder="email">
-  <input type="password" name="password" placeholder="password">
-  <input type="submit" value="create account">
-</form>
+    <div id="signup">
+      <h1>Welcome to surVader!</h1>
+      <h2>Create Account</h2>
+      <form role="form" action="/users" method="POST">
+          <input type="text" name="name" placeholder="name"><br>
+          <input type="email" name="email" placeholder="email"><br>
+          <input type="password" name="password" placeholder="password"><br>
+          <input type="submit" class="btn btn-primary" value="create account">
+      </form>
+    </div>
+  </div>
 </div>

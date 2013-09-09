@@ -1,0 +1,30 @@
+body {
+  background-image: url('../images/darth_vader_2-wide.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  position: relative;
+}
+
+#signup_background {
+  position: absolute;
+  bottom: 100px;
+  right: 100px;
+  height: 250px;
+  width: 500px;
+  background-color: white;
+  opacity: .5;
+  border: 1px solid black;
+}
+
+#signup {
+  position: absolute;
+  height: 250px;
+  width: 500px;
+  bottom: 100px;
+  right: 100px;
+  text-align: center;
+}
+
+

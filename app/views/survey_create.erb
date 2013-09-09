@@ -2,12 +2,14 @@
 
 <%= erb :_errors %>
 
-<form id="new_survey" method="post" action="/surveys">
-  <input type="text" name="label" placeholder="Survey Title"> 
-  <textarea name="description" rows="4" columns="20" placeholder="What's this survey about?"></textarea>
-  <input type="submit" value="Create Survey">
+<form id="new_survey" method="post" action="/surveys/new">
+	<h5>Survey Info:</h5>
+	<div id="survey_input">
+  	<input type="text" name="label" placeholder="Survey Title"> 
+  	<textarea name="description" rows="4" columns="20" placeholder="What's this survey about?"></textarea>
+  	<button type="button" class="set">Set Survey Values</button>
+  	<button type="button" class="edit" style="display: none;">Edit Survey Info</button>
+  </div>
+  <button type="button" class="add_question">Add Question</button>
+  <input type="submit" id="submit_survey" value="Submit Survey" style="display: none;">
 </form>
-
-<div id="question_form">
-  
-</div>

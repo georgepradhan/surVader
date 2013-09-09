@@ -1,48 +1,75 @@
 $(document).ready(function(){
-  $('#new_survey').on('submit', function(e){
+  var question_count = 0;
+  var choice_count = [];
+
+  $("#new_survey").on("click", ".add_question", function(e){
     e.preventDefault();
+    var current_button = $(this);
     $.ajax({
-      url: this.action,
-      type: this.method,
-      data: $(this).serialize(),
+      url: "/questions/new",
+      type: "post",
+      data: { question_index: question_count }
     })
-    .done(function(data) {
-      $('#question_form').html(data);
-      $('#new_survey input[type=submit]').hide();
+    .done(function(question_form) {
+      current_button.before(question_form);
+      $("#submit_survey").show();
+      choice_count.push(0);
+      question_count++;
     })
     .fail(function() {
-      console.log("error");
+      console.log("error on question create");
     });
   });
-  $('#question_form').on('submit', '#new_question', function(e){
+
+  $("#new_survey").on("click", ".add_choice", function(e) {
     e.preventDefault();
+    var current_button = $(this);
+    var q_index = getQuestionIndex(current_button);
     $.ajax({
-      url: this.action,
-      type: this.method,
-      data: $(this).serialize(),
+      url: "/choices/new",
+      type: "post",
+      data: { question_index: q_index, choice_index: choice_count[q_index] }
     })
-    .done(function(data) {
-      $('#question_submit').hide();
-      $('#question_form').append(data);
+    .done(function(choice_form) {
+      current_button.before(choice_form);
+      choice_count[q_index] += 1;
     })
     .fail(function() {
-      console.log("error");
+      console.log("error on choice create")
     });
   });
-  $('#question_form').on('submit', '#new_choice', function(e){
+
+  $("#new_survey").on("click", ".set", function(e){
     e.preventDefault();
-    $.ajax({
-      url: this.action,
-      type: this.method,
-      data: $(this).serialize(),
-    })
-    .done(function(data) {
-      $('input[value="Add Choices"]').last().hide();
-      $('.finish_survey').hide();
-      $('#question_form').append(data);
-    })
-    .fail(function() {
-      console.log("error");
+    var current_div = $(this).parent();
+    var survey_text = textInput(current_div);
+    current_div.children().toggle();
+    $.each(survey_text, function(k, v){
+        current_div.find(".set").before("<p>" + v + "</p>");
     });
   });
+
+  $("#new_survey").on("click", ".edit", function(e){
+    e.preventDefault();
+    var current_div = $(this).parent();
+    current_div.children("p").remove();
+    current_div.children().toggle();
+  });
+
 });
+
+var textInput = function(div) {
+  var input = {};
+  div.children("input, textarea").each(function(i) {
+    var key = $(this).attr('name');
+    var value = $(this).val();
+    input[key] = value;
+  })
+  return input;
+}
+
+var getQuestionIndex = function(button) {
+  var q_div = button.prevAll(".question_input").first();
+
+  return $(".question_input").index(q_div);
+}

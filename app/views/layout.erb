@@ -17,7 +17,7 @@
   <script src="/js/application.js"></script>
 
   <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" media="screen">
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
@@ -29,10 +29,11 @@
 
   <title></title>
 </head>
-  <%= erb :_nav %>
+
 <body>
-<div class="container">
-  <%= yield %>
-</div>
+  <%= erb :_nav %>
+  <div class="our_container">
+    <%= yield %>
+  </div>
 </body>
 </html>

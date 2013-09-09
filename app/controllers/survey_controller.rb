@@ -7,6 +7,22 @@ get '/surveys/new' do
   erb :survey_create
 end
 
+post '/surveys/new' do
+  save_survey
+  redirect to('/')
+end
+
+post '/questions/new' do
+  @question_index = params[:question_index]
+  erb :_question_create, layout: false
+end
+ 
+post '/choices/new' do
+  @question_index = params[:question_index]
+  @choice_index = params[:choice_index]
+  erb :_choice_create, layout: false
+end
+
 get '/surveys/:survey_id' do
   @survey = Survey.find(params[:survey_id])
   erb :_survey_show
@@ -33,6 +49,8 @@ get "/surveys/:survey_id/results/questions/:question_id" do
   @choices.to_json
 end
 
+#Check that these routes are being used...
+
 post '/surveys' do
   @survey = Survey.new(label: params[:label], description: params[:description], user: current_user)
   if @survey.save
@@ -57,3 +75,4 @@ post '/choices' do
   @choice = Choice.create(label: params[:label], question: @question)
   erb :_choice_create, layout: false
 end
+

@@ -7,7 +7,10 @@
 </div>
 <div class="top-right">
   <h2>Profile/Results</h2>
+  <img src="<%=gravatar_image_source%>">
 </div>
 <div class="bottom-right">
   <h2>Surveys to Take</h2>
+  <% @surveys = Survey.all  - current_user.surveys %>
+  <%= erb :_surveys_list %>
 </div>
