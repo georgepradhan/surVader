@@ -1,4 +1,4 @@
-.container {
+.our_container {
   margin: 20px auto;
   height: 750px;
   width: 750px;
@@ -9,12 +9,8 @@ th {
   text-align: left;
 }
 
-nav li {
-  display: inline;
-}
-
-.container div {
-  margin: 20px 0;
+.our_container div {
+  margin: 60px 0;
 }
 
 .left {
@@ -39,3 +35,4 @@ nav li {
   float: right;
   border-top: 1px solid;
 }
+
