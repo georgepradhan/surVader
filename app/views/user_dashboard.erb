@@ -1,5 +1,6 @@
 <div class="left">
   <h1>Your Surveys</h1>
+  <% @surveys = current_user.surveys %>
   <%= erb :_surveys_list %>
   <br>
   <hr>
@@ -8,9 +9,14 @@
 <div class="top-right">
   <h2>Profile/Results</h2>
   <img src="<%=gravatar_image_source%>">
+  <div id="results-container">
+    <p>Welcome <%=current_user.name%>!</p>
+    <p>Click Survey On Left to View Results</p>
+    <p>Click Survey Below to Take Survey</p>
+  </div>
 </div>
 <div class="bottom-right">
   <h2>Surveys to Take</h2>
-  <% @surveys = Survey.all  - current_user.surveys %>
+  <% @surveys = Survey.all - current_user.surveys %>
   <%= erb :_surveys_list %>
 </div>

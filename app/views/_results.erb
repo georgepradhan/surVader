@@ -1,26 +1,26 @@
-<h1>Results for <%= @survey.label %></h1>
-<ol>
-<% @questions.each_with_index do |question, index| %>
-  <h3><li><%=question.label%></li></h3>
-  <div class="table-responsive">
-      <table class="table table-striped ">
-        <tr>
-          <th>Choice</th>
-          <th>Number of Votes</th>
-        </tr>
-    <% @choices[index].each do |choice| %>
-        <tr>
-          <td><%=choice.label%></td>
-          <td><%=choice.responses.count%></td>
-        </tr>
-    <% end %>
-    </table>
-      </div>
-    <div class="barGraphs" id="barGraph-<%=index%>" style="height: 250px;" data-survey="<%=@survey.id%>" data-question="<%=question.id%>"></div>
-<% end %>
-</ol>
+
+  <h1>Results for <%= @survey.label %></h1>
+  <ol>
+  <% @questions.each_with_index do |question, index| %>
+    <h3><li><%=question.label%></li></h3>
+    <div class="table-responsive">
+        <table class="table table-striped ">
+          <tr>
+            <th>Choice</th>
+            <th>Number of Votes</th>
+          </tr>
+      <% @choices[index].each do |choice| %>
+          <tr>
+            <td><%=choice.label%></td>
+            <td><%=choice.responses.count%></td>
+          </tr>
+      <% end %>
+      </table>
+        </div>
+      <div class="barGraphs" id="barGraph-<%=index%>" style="height: 250px;" data-survey="<%=@survey.id%>" data-question="<%=question.id%>"></div>
+  <% end %>
+  </ol>
+
 
 <!-- Moris Chart -->
-
-
-<script type="text/javascript" src="/js/survey_results.js"></script>
+<script type="text/javascript" src="/js/survey_results_large.js"></script>

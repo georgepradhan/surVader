@@ -33,7 +33,11 @@ get "/surveys/:survey_id/results" do
   @questions = @survey.questions
   @choices = @questions.map {|question| question.choices}  # array of choice-object arrays... 
   puts @choices
-  erb :_results
+  if request.xhr?
+    erb :_results_small, layout: false
+  else
+    erb :_results
+  end
 end
 
 # AJAX controller for survey_results.js

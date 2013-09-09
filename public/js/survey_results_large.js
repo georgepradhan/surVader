@@ -7,9 +7,7 @@ $(".barGraphs").each(function(index){
     type: "get"
   }).done(function(data){
     console.log("sucess" + data)
-      console.log(this);
-      console.log(this.class);
-      new Morris.Donut({ //Donut
+      new Morris.Bar({ //Donut
       // ID of the element in which to draw the chart.
       element: element_id,
       // Chart data records -- each entry in this array corresponds to a point on
@@ -25,4 +23,3 @@ $(".barGraphs").each(function(index){
 });
   })
 });
-

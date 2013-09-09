@@ -1,0 +1,13 @@
+<div id="results">
+  <p>Results for <%= @survey.label %></p>
+  <ol>
+  <% @questions.each_with_index do |question, index| %>
+    <li><%=question.label%>
+      <div class="barGraphs" id="barGraph-<%=index%>" style="height: 125px;margin:0" data-survey="<%=@survey.id%>" data-question="<%=question.id%>"></div>
+    </li>
+  <% end %>
+  </ol>
+</div>
+
+<!-- Moris Chart -->
+<script type="text/javascript" src="/js/survey_results.js"></script>
