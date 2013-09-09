@@ -9,9 +9,9 @@ body {
 
 #signup_background {
   position: absolute;
-  bottom: 100px;
+  bottom: 130px;
   right: 100px;
-  height: 275px;
+  height: 300px;
   width: 500px;
   background-color: white;
   opacity: .5;
@@ -21,9 +21,9 @@ body {
 
 #signup {
   position: absolute;
-  height: 275px;
+  height: 300px;
   width: 500px;
-  bottom: 100px;
+  bottom: 130px;
   right: 100px;
   text-align: center;
 }
