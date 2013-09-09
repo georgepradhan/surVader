@@ -5,22 +5,18 @@
   <ol>
     <form action="/surveys/<%=@survey.id%>/responses" method="POST">
       <% @survey.questions.each do |question| %>
-        <div class='question'>
+        <div class='form-group'>
           <li>
-            <%= question.label %>
+            <label for=<%= question.label %>><%= question.label %></label>
           </li>
-          <ul>
             <% question.choices.each do |choice| %>
-              <li>
-                <label><%= choice.label %>
-                  <input type="radio" name="question[<%=question.label%>]" value="<%=choice.id%>">
+                <label class="radio-inline">
+                  <input type="radio" name="question[<%=question.label%>]" value="<%=choice.id%>"><%= choice.label %>
                 </label>
-              </li>
             <% end %>
-          </ul> 
         </div>
       <% end %>
-    <input type="submit" value="Submit your answers">
+    <input type="submit" value="Submit your answers" class="btn btn-primary">
     </form>
   </ol>
 <% end %>
