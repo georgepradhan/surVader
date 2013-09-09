@@ -11,4 +11,6 @@
 </div>
 <div class="bottom-right">
   <h2>Surveys to Take</h2>
+  <% @surveys = Survey.all  - current_user.surveys %>
+  <%= erb :_surveys_list %>
 </div>
