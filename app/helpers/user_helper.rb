@@ -5,7 +5,7 @@ helpers do
   end
 
   def logged_in?
-    current_user
+    true if current_user
   end
 
   def signup
