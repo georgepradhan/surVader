@@ -1,8 +1,8 @@
 <hr>
 <h5>Question Info:</h5>
 <div class="question_input">
-  	<input type="text" name="q<%= @question_index %>[label]" placeholder="What would you like to ask?">
-  	<button type="button" class="set">Set Question</button>
-  	<button type="button" class="edit" style="display: none;">Edit Question</button>
+  	<input type="text" class="form-control" name="q<%= @question_index %>[label]" placeholder="What would you like to ask?"><br>
+  	<button type="button" class="btn btn-success set">Set Question</button>
+  	<button type="button" class="btn btn-primary edit" style="display: none;">Edit Question</button>
 </div>
-<button type="button" class="add_choice">Add Choice</button>
+<button type="button" class="btn btn-primary add_choice">Add Choice</button>

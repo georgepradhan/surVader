@@ -1,0 +1,8 @@
+button {
+  margin: 5px 0;
+}
+
+#submit_survey {
+  position: relative;
+  top: 2.5px;
+}

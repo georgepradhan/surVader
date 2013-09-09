@@ -1,15 +1,18 @@
 <script type='text/javascript' src="/js/survey_creation.js"></script>
+<link rel="stylesheet" href="/css/survey_creation.css">
 
 <%= erb :_errors %>
 
 <form id="new_survey" method="post" action="/surveys/new">
-	<h5>Survey Info:</h5>
+	<h3>Survey Info:</h3>
 	<div id="survey_input">
-  	<input type="text" name="label" placeholder="Survey Title"> 
-  	<textarea name="description" rows="4" columns="20" placeholder="What's this survey about?"></textarea>
-  	<button type="button" class="set">Set Survey Values</button>
-  	<button type="button" class="edit" style="display: none;">Edit Survey Info</button>
+    <div class="form-group">
+    	<input type="text" class="form-control" name="label" placeholder="Survey Title"><br>
+    	<textarea name="description" class="form-control" rows="4" columns="20" placeholder="What's this survey about?"></textarea><br>
+    	<button type="button" class="btn btn-success set">Set Survey Values</button>
+    </div>
+  	<button type="button" class="btn btn-primary edit" style="display: none;">Edit Survey Info</button>
   </div>
-  <button type="button" class="add_question">Add Question</button>
-  <input type="submit" id="submit_survey" value="Submit Survey" style="display: none;">
+  <button type="button" class="btn btn-primary add_question">Add Question</button>
+  <input type="submit" id="submit_survey" class="btn btn-danger" value="Submit Survey" style="display: none;">
 </form>
