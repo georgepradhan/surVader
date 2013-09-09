@@ -3,7 +3,7 @@
   <h3><%=@survey.description%></h3>
 
   <ol>
-    <form action="/survey/<%=@survey.id%>/responses" method="POST">
+    <form action="/surveys/<%=@survey.id%>/responses" method="POST">
       <% @survey.questions.each do |question| %>
         <div class='question'>
           <li>

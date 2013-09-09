@@ -1,13 +1,38 @@
-.container {
+.our_container {
   margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  height: 750px;
+  width: 750px;
+  padding: 0px 0px 0px 0px;
 }
+
 th {
   text-align: left;
 }
 
-nav li {
-  display: inline;
+.our_container div {
+  margin: 60px 0;
 }
+
+.left {
+  position: relative;
+  height: 600px;
+  width: 410px;
+  border-right: 1px solid;
+  float: left;
+}
+
+.top-right {
+  position: relative;
+  width: 300px;
+  height: 350px;
+  float: right;
+}
+
+.bottom-right {
+  position: relative;
+  width: 300px;
+  height: 250px;
+  float: right;
+  border-top: 1px solid;
+}
+

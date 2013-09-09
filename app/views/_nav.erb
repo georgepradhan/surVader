@@ -1,15 +1,12 @@
-<nav>
-  <ul>
-    <li><a href="/">Home</a></li>
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <ul class="nav">
+    <li><a class="navbar-form pull-left navbar-brand" href="/">surVader</a></li>
     
-    <% if logged_in? %>
-      <li><a href="/user/<%= current_user.id %>">My Surveys</a></li>    
-      <li><a href="/surveys">Surveys you can take</a></li>
-      <li><a href="/logout">Logout</a></li>
+    <% if logged_in? %>      
+      <li><a class="navbar-form pull-right navbar-brand" href="/logout">Logout</a></li>
     <% else %>
-      <li><a href="/login">Log In</a></li>
+      <li><%=erb :_user_login%></li>
     <% end %>
-
   </ul>
-</nav>
+</div>
 

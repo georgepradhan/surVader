@@ -1,16 +1,20 @@
 # stuff for creating a user
-
-get "/login" do
-  erb :user_signup
+get '/' do
+  # Look in app/views/index.erb
+  if logged_in?
+    redirect "/users/#{current_user.id}"
+  else
+    erb :index
+  end
 end
 
 post "/users" do
   signup
 end
 
-get "/user/:user_id" do
+get "/users/:user_id" do
   @user = User.find(params[:user_id])
   @surveys = @user.surveys
-  erb :user_profile
+  erb :user_dashboard
 end
 
