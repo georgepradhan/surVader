@@ -1,6 +1,4 @@
-# stuff for creating a user
 get '/' do
-  # Look in app/views/index.erb
   if logged_in?
     redirect "/users/#{current_user.id}"
   else
@@ -14,7 +12,7 @@ end
 
 get "/users/:user_id" do
   @user = User.find(params[:user_id])
-  @surveys = @user.surveys
+  @surveys = @user.surveys #can be refactored into line 16 using the :include option
   erb :user_dashboard
 end
 

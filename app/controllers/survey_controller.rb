@@ -12,7 +12,7 @@ post '/surveys/new' do
   redirect to('/')
 end
 
-post '/questions/new' do
+post '/questions/new' do # I get that these (15-24) are POST routes because of the AJAX calls and the dynamic naming of the input fields, and it works, but try to think of different ways of doing this that allows them to be GET routes, since *really* all these routes do is fetch a partial
   @question_index = params[:question_index]
   erb :_question_create, layout: false
 end
@@ -52,6 +52,7 @@ get "/surveys/:survey_id/results/questions/:question_id" do
 
   @choices.to_json
 end
+# ^ why are all these (44-54) instance variables?
 
 
 
