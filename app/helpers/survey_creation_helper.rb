@@ -2,7 +2,7 @@ helpers do
 
   def save_survey
     @new_survey = Survey.create(label: params[:label], description: params[:description], user: current_user)
-    params.delete("label")
+    params.delete("label") # what is this doing?
     params.delete("description")
     params.each_value do |question_hash|
       @new_question = Question.create(label: question_hash[:label], survey: @new_survey)

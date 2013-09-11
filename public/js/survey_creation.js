@@ -1,3 +1,6 @@
+// why is this separate from application.js?
+// again, think about creating a surveyUI object and define all the functions here. on application.js, you can create a new instance and then bind the events to the named functions
+
 $(document).ready(function(){
   var question_count = 0;
   var choice_count = [];

@@ -1,3 +1,5 @@
+// the only differences I'm seeing between this file and survey_results_large.js are the two console.log statements on lines 12-13
+
 $(".barGraphs").each(function(index){
   var id = "#" + this.id
   var element_id = this.id 

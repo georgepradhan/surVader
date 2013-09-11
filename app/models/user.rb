@@ -1,7 +1,11 @@
 class User < ActiveRecord::Base
-  # Remember to create a migration!
   has_many :responses
-  has_many :surveys
+  #what about the association to :choices?
+  has_many :surveys #alias to :created_surveys, use :source and :foreign_key
+  #define the relationship to :user_surveys
+  #define the relationship to surveys through :user_surveys and alias to :taken_surveys
+
+  #add some validations (email format, not null, uniqueness, etc.)
  
   include BCrypt
 
