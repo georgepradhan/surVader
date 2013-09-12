@@ -43,14 +43,14 @@ end
 # AJAX controller for survey_results.js
 get "/surveys/:survey_id/results/questions/:question_id" do
   content_type :json
-  @choices = []
-  @question = Question.find(params[:question_id])
+  choices = []
+  question = Question.find(params[:question_id])
 
-  @question.choices.each do |choice|
-    @choices << {label: "#{choice.label}", value: "#{choice.responses.count}"}
+  question.choices.each do |choice|
+    choices << {label: "#{choice.label}", value: "#{choice.responses.count}"}
   end
 
-  @choices.to_json
+  choices.to_json
 end
 # ^ why are all these (44-54) instance variables?
 
