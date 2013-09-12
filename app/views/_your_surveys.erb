@@ -1,0 +1,17 @@
+<script type='text/javascript' src="/js/dashboard.js"></script>
+<% if @surveys %>
+  <table class="table">
+    <tr>
+      <th>Survey Name</th>
+      <th>Survey Description</th>
+      <th>Destroy</th>
+    </tr>
+    <% @surveys.each do |survey| %>
+      <tr>
+        <td><a class="my_surveys" href="/surveys/<%=survey.id%>"><%=survey.label%></a></td>
+        <td><%=survey.description%></td>
+        <td><a class="eliminate" href='#'>Eliminate</a></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>

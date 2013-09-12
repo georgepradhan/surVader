@@ -1,7 +1,7 @@
 <div class="left">
   <h1>Your Surveys</h1>
   <% @surveys = current_user.surveys %>
-  <%= erb :_surveys_list %>
+  <%= erb :_your_surveys %>
   <br>
   <hr>
   <a class="btn btn-primary btn-lg" href="/surveys/new">Create your own survey!</a>

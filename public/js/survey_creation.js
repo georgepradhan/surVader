@@ -10,7 +10,7 @@ $(document).ready(function(){
     var current_button = $(this);
     $.ajax({
       url: "/questions/new",
-      type: "post",
+      type: "get",
       data: { question_index: question_count }
     })
     .done(function(question_form) {
@@ -30,7 +30,7 @@ $(document).ready(function(){
     var q_index = getQuestionIndex(current_button);
     $.ajax({
       url: "/choices/new",
-      type: "post",
+      type: "get",
       data: { question_index: q_index, choice_index: choice_count[q_index] }
     })
     .done(function(choice_form) {
