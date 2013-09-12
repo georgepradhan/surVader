@@ -8,13 +8,7 @@ body {
 }
 
 #signup_background {
-  position: absolute;
-  bottom: 130px;
-  right: 100px;
-  height: 300px;
-  width: 500px;
   background-color: white;
-  opacity: .5;
   border: 5px solid black;
   border-radius: 20px;
 }
@@ -25,11 +19,13 @@ body {
   width: 500px;
   bottom: 130px;
   right: 100px;
-  text-align: center;
+  text-align: center;]
+
 }
 
 #signup .container {
   margin: 0;
+  padding-bottom: 20px;
 }
 
 

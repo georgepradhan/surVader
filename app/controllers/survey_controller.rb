@@ -33,6 +33,7 @@ get "/surveys/:survey_id/results" do
   @questions = @survey.questions
   @choices = @questions.map {|question| question.choices}  # array of choice-object arrays... 
   puts @choices
+  puts request.inspect
   if request.xhr?
     erb :_results_small, layout: false
   else
