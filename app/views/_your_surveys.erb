@@ -1,0 +1,38 @@
+<% if @surveys %>
+  <table class="table">
+    <tr>
+      <th>Survey Name</th>
+      <th>Survey Description</th>
+      <th>Destroy</th>
+    </tr>
+    <% @surveys.each do |survey| %>
+      <tr>
+        <td><a class="my_surveys" href="/surveys/<%=survey.id%>"><%=survey.label%></a></td>
+        <td><%=survey.description%></td>
+        <td><a class="eliminate" href='#'>Eliminate</a></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+
+<script>
+// $(document).ready(function() {
+//   $('.eliminate').on('click', function(event){
+//     event.preventDefault();
+//     var link = event.target
+//     var row = $(link).closest('tr');
+//     var surveyName = row.find('.my_surveys').text();
+
+//     $.ajax({
+//       url: '/survey',
+//       type: 'delete',
+//       data: surveyName
+//     }).done(function(response){
+//       alert(response);
+//       row.remove();
+//     }).fail(function(jqXHR, textStatus, errorThrown){
+//        console.log("fail" + errorThrown);
+//      });
+//   });
+// })
+// </script>
