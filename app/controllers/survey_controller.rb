@@ -16,7 +16,7 @@ post '/questions/new' do # I get that these (15-24) are POST routes because of t
   @question_index = params[:question_index]
   erb :_question_create, layout: false
 end
- 
+
 post '/choices/new' do
   @question_index = params[:question_index]
   @choice_index = params[:choice_index]
@@ -31,7 +31,7 @@ end
 get "/surveys/:survey_id/results" do
   @survey = Survey.find(params[:survey_id])
   @questions = @survey.questions
-  @choices = @questions.map {|question| question.choices}  # array of choice-object arrays... 
+  @choices = @questions.map {|question| question.choices}  # array of choice-object arrays...
   puts @choices
   if request.xhr?
     erb :_results_small, layout: false
@@ -54,5 +54,11 @@ get "/surveys/:survey_id/results/questions/:question_id" do
 end
 # ^ why are all these (44-54) instance variables?
 
+# AJAX controller for survey deletion
+delete '/survey' do
+  survey = Survey.find_by_label(params.keys[0])
+  survey.destroy
 
+  erb :_destroy_success, layout: false
+end
 
