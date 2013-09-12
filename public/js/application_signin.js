@@ -1,13 +1,6 @@
-// ?? Can you console.log() anywhere?
-
-// ?? What is this first function doing?
-// ?? Is this a constructor function?
-
 function Modal(){
-
 }
 
-// ?? Defining method for new Modal object?
 Modal.prototype = {
   showModal: function(form){
     console.log("in showModal method")
