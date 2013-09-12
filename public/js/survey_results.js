@@ -1,16 +1,10 @@
-// the only differences I'm seeing between this file and survey_results_large.js are the two console.log statements on lines 12-13
-
 $(".barGraphs").each(function(index){
-  var id = "#" + this.id
   var element_id = this.id 
-  console.log("/surveys/" + $(id).data("survey") + "/results/questions/" + $(id).data("question"))
+  var id = "#" + element_id
   $.ajax({
     url: "/surveys/" + $(id).data("survey") + "/results/questions/" + $(id).data("question"),
     type: "get"
   }).done(function(data){
-    console.log("sucess" + data)
-      console.log(this);
-      console.log(this.class);
       new Morris.Donut({ //Donut
       // ID of the element in which to draw the chart.
       element: element_id,
@@ -23,8 +17,8 @@ $(".barGraphs").each(function(index){
       ykeys: ['value'],
       // Labels for the ykeys -- will be displayed when you hover over the
       // chart.
-      labels: ['Value']
-});
+      //labels: ['Value'] //this functionality not currently being utilized
+      });
   })
 });
 
