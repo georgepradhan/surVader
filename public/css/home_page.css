@@ -1,4 +1,4 @@
-body {
+/*body {
   background-image: url('../images/darth_vader_2-wide.jpg');
   background-position: center;
   background-repeat: no-repeat;
@@ -6,7 +6,7 @@ body {
   background-color: black;
   position: relative;
 }
-
+*/
 #signup_background {
   position: absolute;
   bottom: 130px;

@@ -15,9 +15,11 @@ helpers do
       session[:user_id] = user.id
       redirect "/"
     else
-      "Deal with errors..."
+       @signup_errors = user.errors.messages
+      
       # reload the erb with the signup form and display errors so user can try again
       # also think about client-side validations (JS) to reduce odds of even hitting this point in the code
+      erb :index
     end
   end
 

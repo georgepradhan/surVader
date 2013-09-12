@@ -9,6 +9,7 @@
       <h1>Welcome to surVader!</h1>
       <h2>Create Account</h2>
       <form class="form-signin" action="/users" method="post">
+        <%= @signup_errors[:name] if @signup_errors %>
         <input type="text" class="form-control" name="name" placeholder="name">
         <input type="email" class="form-control" name="email" placeholder="email">
         <input type="password" class="form-control" name="password" placeholder="password"><br>

@@ -15,4 +15,3 @@ get "/users/:user_id" do
   @surveys = @user.surveys #can be refactored into line 16 using the :include option
   erb :user_dashboard
 end
-
