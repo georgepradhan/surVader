@@ -10,7 +10,7 @@ $(document).ready(function(){
     var current_button = $(this);
     $.ajax({
       url: "/questions/new",
-      type: "post",
+      type: "get",
       data: { question_index: question_count }
     })
     .done(function(question_form) {
